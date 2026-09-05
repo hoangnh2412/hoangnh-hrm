@@ -3,7 +3,8 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-@source "../../jarvis/frameworks/frontend/src";
+/* Scan @jarvis/core src — path từ frontend/src tới monorepo jarvis (Tailwind bỏ qua node_modules). */
+@source "../../../jarvis/frameworks/frontend/src";
 @source "./";
 
 @import "@jarvis/core/theme.css";

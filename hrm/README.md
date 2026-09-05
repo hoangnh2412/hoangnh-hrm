@@ -6,10 +6,10 @@ Product HRM scaffold từ Jarvis (.NET 9) — **không dùng NuGet Jarvis**, ch�
 
 | Thư mục | Vai trò | Build |
 |---------|---------|-------|
-| `backend/` | API 5 layer Clean Architecture | `dotnet build backend/Hrm.sln` |
+| `backend/` | API 5 layer Clean Architecture | `dotnet build Hrm.sln` |
 | `frontend/` | SPA Vite + React + `@jarvis/core` | `npm run build` trong `frontend/` |
 | `autotest/` | Playwright consumer `@jarvis/autotest` | `npm run build` trong `autotest/` |
-| `unittest/` | xUnit Domain + Application | `dotnet build unittest/Hrm.Tests.sln` |
+| `unittest/` | xUnit Domain + Application | `dotnet test Hrm.sln` |
 
 Jarvis root: `../jarvis` (frameworks, frontend kit, autotest engine).
 
