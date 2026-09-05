@@ -69,7 +69,8 @@ public static class HostLayerExtension
   public static WebApplication UseHostLayer(this WebApplication app)
   {
     app.UseCoreSwagger();
-    app.UseHttpsRedirection();
+    if (!app.Environment.IsDevelopment())
+      app.UseHttpsRedirection();
     app.UseCoreSpa();
     app.UseCoreCors();
     app.UseJarvisOpenTelemetry();

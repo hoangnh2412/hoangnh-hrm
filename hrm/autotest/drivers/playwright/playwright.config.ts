@@ -23,6 +23,7 @@ if (fs.existsSync(envFile)) {
 const baseURL = process.env.WEB_URL ?? process.env.BASE_URL ?? 'http://127.0.0.1:5167';
 const runId = process.env.RUN_ID ?? `local-${Date.now()}`;
 const reportDir = getReportDir(runId);
+const slowMo = Number(process.env.SLOW_MO ?? 0);
 
 export default defineConfig({
   testDir: path.join(root, 'tests'),
@@ -37,7 +38,9 @@ export default defineConfig({
   ],
   use: {
     baseURL,
+    ignoreHTTPSErrors: true,
     trace: 'retain-on-failure',
+    launchOptions: slowMo > 0 ? { slowMo } : undefined,
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'], channel: 'chrome' } }],
 });

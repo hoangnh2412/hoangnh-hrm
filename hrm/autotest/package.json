@@ -7,7 +7,8 @@
     "build": "tsc --noEmit -p tsconfig.json",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "playwright test --config drivers/playwright/playwright.config.ts",
-    "test:api": "playwright test --config drivers/playwright/playwright.config.ts tests/api"
+    "test:api": "playwright test --config drivers/playwright/playwright.config.ts tests/api",
+    "test:ui": "SLOW_MO=400 playwright test --config drivers/playwright/playwright.config.ts tests/ui --headed"
   },
   "dependencies": {
     "@jarvis/autotest": "file:../../jarvis/autotest/core",

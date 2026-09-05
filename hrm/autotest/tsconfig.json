@@ -17,6 +17,7 @@
     "composition/**/*.ts",
     "config/**/*.ts",
     "drivers/**/*.ts",
+    "ui/**/*.ts",
     "tests/**/*.ts"
   ]
 }

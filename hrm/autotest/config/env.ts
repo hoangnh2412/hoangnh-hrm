@@ -1,6 +1,8 @@
 export interface HrmEnv {
   baseUrl: string;
   webUrl: string;
+  loginEmail: string;
+  loginPassword: string;
 }
 
 export function loadEnv(): HrmEnv {
@@ -8,5 +10,7 @@ export function loadEnv(): HrmEnv {
   return {
     baseUrl,
     webUrl: process.env.WEB_URL ?? baseUrl,
+    loginEmail: process.env.LOGIN_EMAIL ?? 'admin@gmail.com',
+    loginPassword: process.env.LOGIN_PASSWORD ?? 'Admin@123',
   };
 }
